@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "service": "service",
+    "about": "About",
+    "bookAppointment": "Book Your Appointment",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "logIn": "Login"
+  },
+  "home": {
+    "title": "Welcome to Our Website",
+    "description": "This is a bilingual website supporting English and Bengali."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about our company and mission."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with us for more information."
+  },
+  "language": {
+    "english": "English",
+    "bengali": "Bengali"
+  },
+  "services.title": "Our Services",
+    "services.subtitle": "Comprehensive homeopathic treatments tailored to your specific health needs",
+    "services.skin.title": "Skin Treatment",
+    "services.skin.description": "Effective homeopathic solutions for acne, eczema, psoriasis, and other skin conditions. Natural healing from within.",
+    "services.allergy.title": "Allergy Relief",
+    "services.allergy.description": "Long-lasting relief from allergies, asthma, and respiratory issues through gentle homeopathic remedies.",
+    "services.child.title": "Child Health",
+    "services.child.description": "Safe and gentle homeopathic care for children's common ailments, growth issues, and immunity building.",
+  
+  "hero.badge": "Natural Healthcare Solution",
+    "hero.title": "Healing Naturally with Homeopathy",
+    "hero.description": "Experience gentle, effective, and holistic treatment for your health concerns. We believe in treating the person, not just the symptoms.",
+    "hero.bookButton": "Book Your Appointment",
+    "hero.learnMore": "Learn More",
+    "hero.experience": "Years Experience",
+    "hero.patients": "Happy Patients",
+    "hero.successRate": "Success Rate",
+
+  "faq.title": "Frequently Asked Questions",
+    "faq.subtitle": "Find answers to common questions about homeopathic treatment",
+    "faq.1.question": "What is homeopathy and how does it work?",
+    "faq.1.answer": "Homeopathy is a natural system of medicine that works on the principle of 'like cures like'. It uses highly diluted substances to stimulate the body's own healing mechanisms. The remedies are individualized to each person's unique symptoms and constitution.",
+    "faq.2.question": "Is homeopathic treatment safe for children and pregnant women?",
+    "faq.2.answer": "Yes, homeopathic remedies are extremely safe for children, pregnant women, and nursing mothers as they are natural and have no side effects. The remedies are gentle yet effective and can be used alongside conventional treatments when necessary.",
+    "faq.3.question": "How long does homeopathic treatment take to show results?",
+    "faq.3.answer": "The duration varies depending on the condition and individual. Acute conditions may show improvement within hours to days, while chronic conditions typically require a few weeks to months. Our holistic approach focuses on lasting healing rather than quick fixes.",
+    "faq.4.question": "Can homeopathy treat chronic diseases?",
+    "faq.4.answer": "Yes, homeopathy is particularly effective for chronic conditions like allergies, skin diseases, digestive disorders, arthritis, and respiratory problems. It addresses the root cause rather than just suppressing symptoms, leading to long-term relief.",
+    "faq.5.question": "What should I expect during my first consultation?",
+    "faq.5.answer": "Your first consultation will last about 60-90 minutes. Dr. Mitchell will take a detailed case history including physical, mental, and emotional symptoms. This comprehensive approach helps in selecting the most suitable remedy for your unique needs.",
+    "faq.6.question": "Can I take homeopathic remedies alongside conventional medicine?",
+    "faq.6.answer": "Yes, homeopathic remedies can be safely taken alongside conventional medications. However, it's important to inform both your homeopath and conventional doctor about all treatments you're receiving to ensure coordinated care."
+}
