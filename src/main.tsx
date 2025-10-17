@@ -17,22 +17,17 @@ const router = createBrowserRouter([
         {
             index: true,
             Component: Home,
-        },
-        {
-            path: "/login",
-            element: <LogPage />,
-        },
-        {
-            path:"/register",
-            element: <Register />
         }
+        
     ]
   },
+  { path: "/login" ,element: <LogPage /> },
+  { path:"/register", element: <Register /> }
 ]);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div className='pt-4 bg-gradient-to-br from-secondary via-white to-accent'>
+    <div className='bg-gradient-to-br from-secondary via-white to-accent'>
       <RouterProvider router={router} />
     </div>
   </StrictMode>,

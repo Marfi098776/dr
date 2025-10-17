@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-11/12 mx-auto border-2 border-green-200 rounded-2xl bg-background sticky top-0 z-50">
+    <nav className="w-11/12 mx-auto border-2 border-b-green-200 rounded-b-2xl bg-background sticky top-0 z-50">
       <div className=" flex items-center justify-between px-4 ">
         {/* Logo */}
         <Link to="/" className='w-50'>
@@ -49,7 +49,7 @@ const Navbar = () => {
           <li>
             
             <Button onClick={() => scrollToSection("about")} 
-              variant={`ghost`} 
+              variant={location.pathname === "/about" ? "secondary" : "ghost"} 
               className={isBangla ? 'bangla text-base' : 'text-base'}
             >
               {t('nav.about')}
@@ -85,8 +85,7 @@ const Navbar = () => {
         {/* Right side (buttons + language) */}
         <div className="hidden md:flex items-center gap-4">
           <Link to="/about">
-            <Button 
-              variant={location.pathname === "/book-appointment" ? "" : ""} 
+            <Button  
               className={isBangla ? 'bangla text-sm' : ''}
             >
               {t('nav.bookAppointment')}

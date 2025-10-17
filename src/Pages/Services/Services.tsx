@@ -1,9 +1,15 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "@/Hooks/useTranslation";
 import { Baby, Droplet, Heart } from "lucide-react";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export function Services() {
    const { t, isBangla } = useTranslation();
+   useEffect(() => {
+       AOS.init({ once: true, duration: 1000, easing: "ease-out-cubic" });
+     }, []);
 
   const services = [
     {
@@ -33,7 +39,8 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8" data-aos="fade-down"
+            data-aos-duration="1000">
           {services.map((service, index) => (
             <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardHeader>

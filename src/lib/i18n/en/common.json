@@ -56,5 +56,27 @@
     "faq.5.question": "What should I expect during my first consultation?",
     "faq.5.answer": "Your first consultation will last about 60-90 minutes. Dr. Mitchell will take a detailed case history including physical, mental, and emotional symptoms. This comprehensive approach helps in selecting the most suitable remedy for your unique needs.",
     "faq.6.question": "Can I take homeopathic remedies alongside conventional medicine?",
-    "faq.6.answer": "Yes, homeopathic remedies can be safely taken alongside conventional medications. However, it's important to inform both your homeopath and conventional doctor about all treatments you're receiving to ensure coordinated care."
+    "faq.6.answer": "Yes, homeopathic remedies can be safely taken alongside conventional medications. However, it's important to inform both your homeopath and conventional doctor about all treatments you're receiving to ensure coordinated care.",
+
+  "footer.about": "Providing natural, holistic healing through classical homeopathy for over 15 years.",
+    "footer.quickLinks": "Quick Links",
+    "footer.services": "Our Services",
+    "footer.contact": "Contact Us",
+    "footer.copyright": "© 2025 Natura Homeopathy. All rights reserved.",
+    "footer.skinTreatment": "Skin Treatment",
+    "footer.allergyRelief": "Allergy Relief",
+    "footer.childHealth": "Child Health",
+    "footer.chronicDiseases": "Chronic Diseases",
+    "footer.aboutDoctor": "About Doctor",
+
+  "appointment.title": "Ready to Start Your Healing Journey?",
+    "appointment.subtitle": "Schedule your consultation today and take the first step towards natural, holistic healing",
+    "appointment.flexible": "Flexible Scheduling",
+    "appointment.flexibleDesc": "Book at your convenience",
+    "appointment.quick": "Quick Appointments",
+    "appointment.quickDesc": "Same-day slots available",
+    "appointment.convenient": "Convenient Location",
+    "appointment.convenientDesc": "Easy to reach clinic",
+    "appointment.button": "Book Your Consultation",
+    "appointment.call": "Or call us at:"
 }
