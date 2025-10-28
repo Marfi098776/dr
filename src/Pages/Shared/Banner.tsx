@@ -1,6 +1,7 @@
-import { ImageWithFallback } from "@/components/ImgfallBack/Imgfallback";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/Hooks/useTranslation";
+import benojirImg from '../../assets/Gemini_Generated_Image_o9z7p8o9z7p8o9z7.png';
+
 
 export function Hero() {
   const { t, isBangla } = useTranslation();
@@ -51,8 +52,8 @@ export function Hero() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-3"></div>
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1709813610121-e2a51545e212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob21lb3BhdGh5JTIwZG9jdG9yfGVufDF8fHx8MTc2MDAyMzQ1MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            <img
+              src={benojirImg}
               alt="Homeopathy Doctor"
               className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
             />

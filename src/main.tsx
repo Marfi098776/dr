@@ -7,6 +7,9 @@ import MainLayouts from './Layouts/MainLayouts.tsx'
 import Home from './Pages/Home/Home.tsx'
 import Register from './Pages/Register/Register.tsx'
 import { LogPage } from './Pages/Login/LogPage.tsx'
+import { AboutDoctor } from './Pages/About/About.tsx'
+import { Services } from './Pages/Services/Services.tsx'
+import FAQ from './Pages/FAQ/FAQ.tsx'
 
 
 const router = createBrowserRouter([
@@ -17,11 +20,25 @@ const router = createBrowserRouter([
         {
             index: true,
             Component: Home,
+        },
+        {
+          path: "/services",
+          Component: Services,
+        },
+        {
+          path: "/about",
+          Component: AboutDoctor,
+        },
+        {
+          path: "/testimonials",
+          element: <FAQ></FAQ>,
         }
         
     ]
   },
-  { path: "/login" ,element: <LogPage /> },
+  { path: "/login" ,element: <LogPage onBack={function (): void {
+    throw new Error('Function not implemented.')
+  } } /> },
   { path:"/register", element: <Register /> }
 ]);
 

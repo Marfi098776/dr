@@ -4,160 +4,118 @@ import logo from '../../assets/10. Logo Horizontal.png'
 import { useTranslation } from '@/Hooks/useTranslation';
 import LanguageToggle from '@/components/common/LanguageToggle';
 import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { AuthContext } from '@/Providers/AuthProviders';
+import { useContext } from 'react';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const { t, isBangla } = useTranslation();
   const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
-    }
-  };
+  const toggleMobileMenu = () => setMobileOpen(!mobileOpen);
+
+  const navLinks = [
+    { name: t('nav.home'), path: "/" },
+    { name: t('nav.service'), path: "/services" },
+    { name: t('nav.about'), path: "/about" },
+    { name: t('nav.testimonials'), path: "/testimonials" },
+    { name: t('nav.blog'), path: "/blog" },
+    { name: t('nav.faq'), path: "/faq" },
+  ];
 
   return (
-    <nav className="w-11/12 mx-auto border-2 border-b-green-200 rounded-b-2xl bg-background sticky top-0 z-50">
-      <div className=" flex items-center justify-between px-4 ">
+    <nav className="w-11/12 mx-auto border-b-2 border-b-green-200 rounded-b-2xl bg-background sticky top-0 z-50">
+      <div className="flex items-center justify-between px-4">
         {/* Logo */}
-        <Link to="/" className='w-50'>
-          <img src={logo} className='' alt="" />
+        <Link to="/" className="w-50">
+          <img src={logo} alt="Logo" className="" />
         </Link>
 
-        {/* navigation links */}
-
-        {/* Menu for Desktop */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-1 text-foreground font-medium">
-          <li><Link to="/">
-            <Button onClick={() => scrollToSection("home")} 
-              variant={`ghost`} 
-              className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.home')}
-            </Button>
-          </Link></li>
-          <li>
-            <Button onClick={() => scrollToSection("services")} 
-              variant={`ghost`} 
-              className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.service')}
-            </Button>
-          </li>
-          <li>
-            
-            <Button onClick={() => scrollToSection("about")} 
-              variant={location.pathname === "/about" ? "secondary" : "ghost"} 
-              className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.about')}
-            </Button>
-          </li>
-          <li>
-            <Button 
-              variant={`ghost`} 
-              className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.testimonials')}
-            </Button>
-          </li>
-          <li>
-            <Button variant={`ghost`}
-               
-              className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.blog')}
-            </Button>
-          
-          </li>
-          <li>
-            <Button onClick={() => scrollToSection("faq")}
-             variant={`ghost`}  
-               className={isBangla ? 'bangla text-base' : 'text-base'}
-            >
-              {t('nav.faq')}
-            </Button>
-          </li>
+          {navLinks.map((link, idx) => (
+            <li key={idx}>
+              <Link to={link.path}>
+                <Button
+                  variant={location.pathname === link.path ? "secondary" : "ghost"}
+                  className={isBangla ? "bangla text-base" : "text-base"}
+                >
+                  {link.name}
+                </Button>
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Right side (buttons + language) */}
+        {/* Right-side buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <Link to="/about">
-            <Button  
-              className={isBangla ? 'bangla text-sm' : ''}
-            >
-              {t('nav.bookAppointment')}
+          <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
+          <Link to="/login">
+            <Button variant="outline" className={isBangla ? "bangla text-sm" : ""}>
+              {t('nav.logIn')}
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button variant="secondary" className={isBangla ? "bangla text-sm" : ""}>
+              {t('nav.register')}
             </Button>
           </Link>
           <LanguageToggle />
-          {/* <Button asChild variant={`outline `} className="text-sm">
-            <Link to="/login">Log In</Link>
-          </Button>
-          <Button asChild className="text-sm">
-            <Link to="/register">Register</Link>
-          </Button> */}
-
-          {/* Language Toggle */}
-          {/* <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Change Language">
-                <Globe className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger> */}
-            {/* <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={toggleLanguage}>
-                {language === "EN" ? "Switch to বাংলা" : "Switch to English"}
-              </DropdownMenuItem>
-            </DropdownMenuContent> 
-          </DropdownMenu>*/}
         </div>
 
         {/* Mobile menu button */}
-        {/* <button
-          onClick={toggleMenu}
-          className="md:hidden text-foreground focus:outline-none"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>*/}
+          
+        
+        <button className="md:hidden text-2xl" onClick={toggleMobileMenu}>
+          {mobileOpen ? <X /> : <Menu />}
+        </button>
       </div>
 
-      {/* Mobile Dropdown */}
-      {/* {isOpen && (
-        <div className="md:hidden bg-background border-t border-border px-4 py-3 space-y-4">
-          <ul className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `block py-1 ${isActive ? "text-primary font-semibold" : "text-foreground"
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-t-2 border-green-200">
+          <ul className="flex flex-col gap-2 p-4">
+            {navLinks.map((link, idx) => (
+              <li key={idx}>
+                <Link to={link.path} onClick={() => setMobileOpen(false)}>
+                  <Button
+                    variant={location.pathname === link.path ? "secondary" : "ghost"}
+                    className={isBangla ? "bangla text-base w-full text-left" : "text-base w-full text-left"}
+                  >
+                    {link.name}
+                  </Button>
+                </Link>
               </li>
             ))}
+            <Avatar className='md:hidden'>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      </Avatar>
+            <li>
+              <Link to="/login" onClick={() => setMobileOpen(false)}>
+                <Button variant="outline" className={isBangla ? "bangla text-base w-full text-left" : "w-full text-left"}>
+                  {t('nav.logIn')}
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" onClick={() => setMobileOpen(false)}>
+                <Button variant="secondary" className={isBangla ? "bangla text-base w-full text-left" : "w-full text-left"}>
+                  {t('nav.register')}
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <LanguageToggle />
+            </li>
           </ul>
-          <div className="flex flex-col gap-2">
-            <Button asChild className="text-sm">
-              <Link to="/book-appointment">Book Appointment</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/login">Sign In</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/register">Register</Link>
-            </Button>
-            <Button variant="ghost" onClick={toggleLanguage}>
-              🌐 {language === "EN" ? "Switch to বাংলা" : "Switch to English"}
-            </Button>
-          </div>
         </div>
-      )} */}
+      )}
     </nav>
   );
 };
